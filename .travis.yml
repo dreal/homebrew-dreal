@@ -1,0 +1,27 @@
+language: objective-c
+env:
+  matrix:
+    - BUILD_FROM_SOURCE=TRUE
+    - BUILD_FROM_SOURCE=FALSE
+
+install:
+  - brew update
+  - brew tap dreal/dreal
+  - brew install --HEAD opam
+  - opam init --yes
+  - eval `opam config env`
+
+script:
+  - if [[ $BUILD_FROM_SOURCE == TRUE ]] ; then
+        opam install ocamlfind batteries oasis
+        brew install --verbose --build-bottle dreal;
+        brew bottle dreal;
+    fi
+  - if [[ $BUILD_FROM_SOURCE == FALSE ]] ; then
+        brew install --verbose dreal;
+    fi
+
+notifications:
+  email:
+    recipients:
+     - soonho.kong@gmail.com
