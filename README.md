@@ -1,4 +1,6 @@
-homebrew-lean
+[![Build Status](https://travis-ci.org/dreal/homebrew-dreal.svg?branch=master)](https://travis-ci.org/dreal/homebrew-dreal)
+
+homebrew-dreal
 =============
 
 Homebrew tap for [dReal][dreal]
