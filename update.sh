@@ -51,6 +51,7 @@ FORMULA_FILE_AT_BREW=/usr/local/Library/Taps/${REPO_NAME}/homebrew-${REPO_NAME}/
 FORMULA_TEMPLATE=${FORMULA_NAME}.rb.template
 OSX_VERSION=`sw_vers -productVersion`
 PUSH_FORMULA_WITH_BOTTLE=FALSE
+TEMP_FILE=temp.rb
 #---------------------------------------------------
 if [ ! -d ./${REPO_NAME} ] ; then
     git clone ${GIT_REMOTE_REPO}
@@ -75,6 +76,10 @@ if [[ $DOIT == TRUE ]] ; then
     brew untap $USER_NAME/$REPO_NAME
     brew tap $USER_NAME/$REPO_NAME
 
+    echo "           "
+    echo "======================================================"
+    echo "           "
+
     # 1. Update formula with a new version
     VERSION_MAJOR=`grep -o -i "VERSION_MAJOR \([0-9]\+\)" ${REPO_NAME}/src/CMakeLists.txt | cut -d ' ' -f 2`
     VERSION_MINOR=`grep -o -i "VERSION_MINOR \([0-9]\+\)" ${REPO_NAME}/src/CMakeLists.txt | cut -d ' ' -f 2`
@@ -82,12 +87,16 @@ if [[ $DOIT == TRUE ]] ; then
     COMMIT_HASH=git`cat ${REPO_NAME}/CURRENT_HASH`
     VERSION_STRING=${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
     echo ${VERSION_STRING}-${COMMIT_HASH}
-    cp ${FORMULA_TEMPLATE} ${FORMULA_FILE}
-    sed -i "" "s/##VERSION##/${VERSION_STRING}/g" ${FORMULA_FILE}
-    sed -i "" "s/##COMMIT_HASH##/${COMMIT_HASH}/g" ${FORMULA_FILE}
-    sed -i "" "s/##USER_NAME##/${USER_NAME}/g" ${FORMULA_FILE}
-    sed -i "" "s/##FORMULA_NAME##/${FORMULA_NAME}/g" ${FORMULA_FILE}
-    cp ${FORMULA_FILE} ${FORMULA_FILE_AT_BREW}
+    cp ${FORMULA_TEMPLATE} ${TEMP_FILE}
+    sed -i "" "s/##VERSION##/${VERSION_STRING}/g" ${TEMP_FILE}
+    sed -i "" "s/##COMMIT_HASH##/${COMMIT_HASH}/g" ${TEMP_FILE}
+    sed -i "" "s/##USER_NAME##/${USER_NAME}/g" ${TEMP_FILE}
+    sed -i "" "s/##FORMULA_NAME##/${FORMULA_NAME}/g" ${TEMP_FILE}
+    cp ${TEMP_FILE} ${FORMULA_FILE_AT_BREW}
+
+    echo "           "
+    echo "======================================================"
+    echo "           "
 
     # 2. Create a bottle
     brew rm ${FORMULA_NAME}
@@ -96,6 +105,9 @@ if [[ $DOIT == TRUE ]] ; then
     BOTTLE_FILE_YOSEMITE=${FORMULA_NAME}-${VERSION_STRING}-${COMMIT_HASH}.yosemite.bottle.tar.gz
     BOTTLE_FILE_MAVERICKS=${FORMULA_NAME}-${VERSION_STRING}-${COMMIT_HASH}.mavericks.bottle.tar.gz
 
+    echo "           "
+    echo "======================================================"
+    echo "           "
 
     # 3. Upload new bottle to origin/gh-pages  
     git checkout gh-pages
@@ -107,6 +119,9 @@ if [[ $DOIT == TRUE ]] ; then
     git push origin gh-pages:gh-pages
     git co master
 
+    echo "           "
+    echo "======================================================"
+    echo "           "
 
     # sed -i "" "s/##BOTTLE_COMMENT##//g" ${FORMULA_FILE}
     # BOTTLE_FILE_YOSEMITE=${FORMULA_NAME}-${VERSION_STRING}-${COMMIT_HASH}.yosemite.bottle.tar.gz
