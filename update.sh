@@ -117,7 +117,7 @@ if [[ $DOIT == TRUE ]] ; then
     git add -f ${BOTTLE_FILE_MAVERICKS}
     git commit -m "Bottle: ${VERSION_STRING}-${COMMIT_HASH} [skip ci]"
     git push origin gh-pages:gh-pages
-    git co master
+    git checkout master
 
     echo "           "
     echo "======================================================"
