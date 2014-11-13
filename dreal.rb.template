@@ -39,8 +39,8 @@ class Dreal < Formula
       system "make", "-C", "../tools"
       # Compile dReal (C++)
       system "cmake", "../src", *args
-      system "make", "-j"
-      system "make", "-j", "install"
+      # system "make", "-j"
+      # system "make", "-j", "install"
     end
   end
 
