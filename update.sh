@@ -77,7 +77,7 @@ if [[ $DOIT == TRUE ]] ; then
     brew tap $USER_NAME/$REPO_NAME
 
     echo "           "
-    echo "======================================================"
+    echo "==== Untap / Tap ========================================"
     echo "           "
 
     # 1. Update formula with a new version
@@ -86,7 +86,7 @@ if [[ $DOIT == TRUE ]] ; then
     VERSION_PATCH=`grep -o -i "VERSION_PATCH \([0-9]\+\)" ${REPO_NAME}/src/CMakeLists.txt | cut -d ' ' -f 2`
     COMMIT_HASH=git`cat ${REPO_NAME}/CURRENT_HASH`
     VERSION_STRING=${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}
-    echo ${VERSION_STRING}-${COMMIT_HASH}
+    echo " New Version : ${VERSION_STRING}-${COMMIT_HASH}"
     cp ${FORMULA_TEMPLATE} ${TEMP_FILE}
     sed -i "" "s/##VERSION##/${VERSION_STRING}/g" ${TEMP_FILE}
     sed -i "" "s/##COMMIT_HASH##/${COMMIT_HASH}/g" ${TEMP_FILE}
@@ -95,7 +95,7 @@ if [[ $DOIT == TRUE ]] ; then
     cp ${TEMP_FILE} ${FORMULA_FILE_AT_BREW}
 
     echo "           "
-    echo "======================================================"
+    echo "=== Formula Created ======================================"
     echo "           "
 
     # 2. Create a bottle
@@ -106,7 +106,7 @@ if [[ $DOIT == TRUE ]] ; then
     BOTTLE_FILE_MAVERICKS=${FORMULA_NAME}-${VERSION_STRING}-${COMMIT_HASH}.mavericks.bottle.tar.gz
 
     echo "           "
-    echo "======================================================"
+    echo "==== Bottle created ======================================"
     echo "           "
 
     # 3. Upload new bottle to origin/gh-pages  
