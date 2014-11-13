@@ -22,8 +22,7 @@ git reset --hard origin/master --quiet
 git rev-parse HEAD > CURRENT_HASH
 cd ..
 
-# if ! cmp ${REPO_NAME}/LAST_HASH ${REPO_NAME}/CURRENT_HASH >/dev/null 2>&1
-if true
+if ! cmp ${REPO_NAME}/LAST_HASH ${REPO_NAME}/CURRENT_HASH >/dev/null 2>&1
 then
     # 1. Update formula with a new version
     VERSION_MAJOR=`grep -o -i "VERSION_MAJOR \([0-9]\+\)" ${REPO_NAME}/src/CMakeLists.txt | cut -d ' ' -f 2`
