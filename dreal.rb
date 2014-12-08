@@ -2,14 +2,14 @@ require "formula"
 
 class Dreal < Formula
   homepage "http://dreal.github.io"
-  url "https://github.com/dreal/dreal.git"
-  version "2.14.12-gitaa7f0182ab2e9fa5cbd42bd73509a5bd330aea8d"
+  url "https://github.com/soonhokong/dreal.git"
+  version "2.14.12-gitcb2bcbc9c8d66abc13463c13355dbdb9c4ae1405"
 
-  bottle do
-    root_url 'https://dreal.github.io/homebrew-dreal'
-    sha1 'a3c675595fcc979a046d05aca95473422bdd05dd' => :yosemite
-    sha1 '7439f634d7884ebe16ea79fbd2a6c93823e30566' => :mavericks
-  end
+##BOTTLE_COMMENT##  bottle do
+##BOTTLE_COMMENT##    root_url 'https://dreal.github.io/homebrew-dreal'
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_MAVERICKS_HASH##' => :mavericks
+##BOTTLE_COMMENT##  end
 
   # Required
   depends_on 'automake'         => :build
