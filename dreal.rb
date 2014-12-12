@@ -3,13 +3,13 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/soonhokong/dreal.git"
-  version "2.14.12-gitcb2bcbc9c8d66abc13463c13355dbdb9c4ae1405"
+  version "2.14.12-gitfd9fbede8d0eb92d82283b8b0a7961c6d620887b"
 
-  bottle do
-    root_url 'https://dreal.github.io/homebrew-dreal'
-    sha1 '166d70d7030221430bc33fbaa444a1d1ffb781a7' => :yosemite
-    sha1 '3174e978a386fd583cec52542d899f1a9915fa66' => :mavericks
-  end
+##BOTTLE_COMMENT##  bottle do
+##BOTTLE_COMMENT##    root_url 'https://dreal.github.io/homebrew-dreal'
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_MAVERICKS_HASH##' => :mavericks
+##BOTTLE_COMMENT##  end
 
   # Required
   depends_on 'automake'         => :build
