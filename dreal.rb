@@ -5,11 +5,11 @@ class Dreal < Formula
   url "https://github.com/soonhokong/dreal.git"
   version "2.15.01-git719a936da6b9a9a9c139c9115e04ce35547bfa25"
 
-##BOTTLE_COMMENT##  bottle do
-##BOTTLE_COMMENT##    root_url 'https://dreal.github.io/homebrew-dreal'
-##BOTTLE_COMMENT##    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
-##BOTTLE_COMMENT##    sha1 '##BOTTLE_MAVERICKS_HASH##' => :mavericks
-##BOTTLE_COMMENT##  end
+  bottle do
+    root_url 'https://dreal.github.io/homebrew-dreal'
+    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
+    sha1 '85a93b9b016b18ed9305daf168f4e734c8346130' => :mavericks
+  end
 
   # Required
   depends_on 'automake'         => :build
