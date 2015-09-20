@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #---------------------------------------------------
 ORG_NAME=dreal
-REPO_NAME=dreal
+REPO_NAME=dreal3
 GIT_REMOTE_REPO=git@github.com:${ORG_NAME}/${REPO_NAME}
 FORMULA_NAME=dreal
 FORMULA_FILE=${FORMULA_NAME}.rb

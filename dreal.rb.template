@@ -2,7 +2,7 @@ require "formula"
 
 class Dreal < Formula
   homepage "http://dreal.github.io"
-  url "https://github.com/soonhokong/dreal.git"
+  url "https://github.com/dreal/dreal3.git"
   version "##VERSION##-##COMMIT_HASH##"
 
 ##BOTTLE_COMMENT##  bottle do
