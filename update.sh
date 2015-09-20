@@ -51,8 +51,8 @@ if [[ $DOIT == TRUE ]] ; then
     git push origin master:master
 
     # 3. Create a bottle
-    brew untap $ORG_NAME/$REPO_NAME
-    brew tap $ORG_NAME/$REPO_NAME
+    brew untap $ORG_NAME/$FORMULA_NAME
+    brew tap $ORG_NAME/$FORMULA_NAME
     brew rm ${FORMULA_NAME}
     brew install --build-bottle ${FORMULA_NAME}
     brew bottle ${FORMULA_NAME}
