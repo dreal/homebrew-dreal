@@ -3,13 +3,7 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
-  version "3.15.08-git05e0d648f1c096d6f0d2f4b2448a4937bb2e8bcc"
-
-##BOTTLE_COMMENT##  bottle do
-##BOTTLE_COMMENT##    root_url 'https://dreal.github.io/homebrew-dreal'
-##BOTTLE_COMMENT##    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
-##BOTTLE_COMMENT##    sha1 '##BOTTLE_MAVERICKS_HASH##' => :mavericks
-##BOTTLE_COMMENT##  end
+  version "3.15.08.03"
 
   # Required
   depends_on 'automake'         => :build
@@ -30,8 +24,7 @@ class Dreal < Formula
       if ! Dir.exists?(ENV['HOME'] + "/.opam")
           system "opam", "init", "--yes"
       end
-      # system "opam", "switch", "4.02.1"
-      # ENV['PATH'] = ENV['HOME'] + "/.opam/4.02.1/bin" + ":" + ENV['PATH']
+      # Compile dReach(OCaml)
       ENV['PATH'] = ENV['HOME'] + "/.opam/system/bin" + ":" + ENV['PATH']
       puts "PATH= " + ENV['PATH']
       system "opam", "install", "--yes", "oasis", "batteries", "ocamlfind"
