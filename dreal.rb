@@ -3,9 +3,10 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
-  version "3.15.08.03"
+  version "3.15.10.06"
 
   # Required
+  depends_on 'gcc'
   depends_on 'automake'         => :build
   depends_on 'autoconf'         => :build
   depends_on 'libtool'          => :build
@@ -14,6 +15,7 @@ class Dreal < Formula
   depends_on 'opam'             => :build
   depends_on 'cmake'            => :build
   depends_on 'wget'             => :build
+  depends_on 'ninja'            => :build
   depends_on 'google-perftools' => :optional
 
   def install
@@ -31,14 +33,14 @@ class Dreal < Formula
       system "make", "-C", "../tools", "setup.ml", "setup.data"
       system "make", "-C", "../tools"
       # Compile dReal (C++)
-      system "cmake", "../src", *args
-      system "make", "-j"
-      system "make", "-j", "install"
+      system "cmake", "-GNinja", "../src", *args
+      system "ninja", "-j1"
+      system "ninja", "install"
     end
   end
 
   test do
-    system "make", "-j", "test"
+    system "ninja", "test"
   end
 
   def caveats; <<-EOS.undent
