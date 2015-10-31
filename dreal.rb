@@ -5,6 +5,12 @@ class Dreal < Formula
   url "https://github.com/dreal/dreal3.git"
   version "3.15.10.06"
 
+  bottle do
+    root_url 'https://dreal.github.io/homebrew-dreal'
+    sha256 "c7b2f3e8a9c3e9c09e24458b30f904f3f3afbc0c9a14ad3d3c280e3474ef16ff" => :yosemite
+    sha256 "a6e96589cdb013f4400b75bbca1dccd509b569b07047a4784e0d39ea678ff64a" => :el_capitan
+  end
+
   # Required
   depends_on 'gcc'
   depends_on 'automake'         => :build
