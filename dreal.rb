@@ -3,16 +3,16 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
-  version "3.15.10.06"
+  version "3.15.11-git925b2d1c793673f6196d7cc5960ebbb4fad62e13"
 
-  bottle do
-    root_url 'https://dreal.github.io/homebrew-dreal'
-    sha256 "c7b2f3e8a9c3e9c09e24458b30f904f3f3afbc0c9a14ad3d3c280e3474ef16ff" => :yosemite
-    sha256 "a6e96589cdb013f4400b75bbca1dccd509b569b07047a4784e0d39ea678ff64a" => :el_capitan
-  end
+##BOTTLE_COMMENT##  bottle do
+##BOTTLE_COMMENT##    root_url 'https://dreal.github.io/homebrew-dreal'
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_EL_CAPITAN_HASH##' => :el_capitan
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_YOSEMITE_HASH##' => :yosemite
+##BOTTLE_COMMENT##    sha1 '##BOTTLE_MAVERICKS_HASH##' => :mavericks
+##BOTTLE_COMMENT##  end
 
   # Required
-  depends_on 'gcc'
   depends_on 'automake'         => :build
   depends_on 'autoconf'         => :build
   depends_on 'libtool'          => :build
@@ -21,7 +21,6 @@ class Dreal < Formula
   depends_on 'opam'             => :build
   depends_on 'cmake'            => :build
   depends_on 'wget'             => :build
-  depends_on 'ninja'            => :build
   depends_on 'google-perftools' => :optional
 
   def install
@@ -32,21 +31,22 @@ class Dreal < Formula
       if ! Dir.exists?(ENV['HOME'] + "/.opam")
           system "opam", "init", "--yes"
       end
-      # Compile dReach(OCaml)
+      # system "opam", "switch", "4.02.1"
+      # ENV['PATH'] = ENV['HOME'] + "/.opam/4.02.1/bin" + ":" + ENV['PATH']
       ENV['PATH'] = ENV['HOME'] + "/.opam/system/bin" + ":" + ENV['PATH']
       puts "PATH= " + ENV['PATH']
       system "opam", "install", "--yes", "oasis", "batteries", "ocamlfind"
       system "make", "-C", "../tools", "setup.ml", "setup.data"
       system "make", "-C", "../tools"
       # Compile dReal (C++)
-      system "cmake", "-GNinja", "../src", *args
-      system "ninja", "-j1"
-      system "ninja", "install"
+      system "cmake", "../src", *args
+      system "make", "-j"
+      system "make", "-j", "install"
     end
   end
 
   test do
-    system "ninja", "test"
+    system "make", "-j", "test"
   end
 
   def caveats; <<-EOS.undent
