@@ -40,13 +40,13 @@ class Dreal < Formula
       system "make", "-C", "../tools"
       # Compile dReal (C++)
       system "cmake", "../src", *args
-      system "make", "-j"
-      system "make", "-j", "install"
+      system "make"
+      system "make", "install"
     end
   end
 
   test do
-    system "make", "-j", "test"
+    system "make", "test"
   end
 
   def caveats; <<-EOS.undent
