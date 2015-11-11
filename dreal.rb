@@ -3,12 +3,12 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
-  version "3.15.11.02"
+  version "3.15.11.03"
 
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
-    sha256 "b3f0163e0c9ee63537383589a294ff1ef580271d5b17d159f7970e128a118a02" => :yosemite
-    sha256 "29d8af07e0caa02771b1397b5ab72e672b9e42929fc51d5097a6cf7bfcdc6dcb" => :el_capitan
+    sha256 "afb1795de7cbbb95f659bd76e099da19361ace3927da147a776719ab1959b8e1" => :yosemite
+    sha256 "3d04b1223dbcc5777d960e1b733cc90a8fa373ebf536024151977e0a430daadf" => :el_capitan
   end
 
   # Required
