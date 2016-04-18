@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 #
 # Usage:
 #         BINTRAY_ID=<my_id> BINTRAY_PWD=<my_password> ./update.sh
