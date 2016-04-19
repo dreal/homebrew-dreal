@@ -3,7 +3,7 @@ require "formula"
 class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
-  version "3.16.04.20160419140341.git03da8aca282fca4f60c91a2fc4fdf4c3babc7fbd"
+  version "3.16.04.20160419143802.gitad0cea2bc9458e4b1ed5df88082d89121f04aab8"
 
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
