@@ -8,7 +8,7 @@ class Dreal < Formula
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
     sha1 '411775891e704083be3c567ad6159e6567a11d00eb7ac1bcf75de34eb091ad0f' => :el_capitan
-    sha1 '1478cfccf8097b6b7148741b2f3653731f6733d62f005582f8e015b10613e85f' => :yosemite
+    sha1 '7f7f8b6d1623455972fe2823ee48c161483108062b88e1f7f272c5ca6752bc0c' => :yosemite
   end
 
   # Required
