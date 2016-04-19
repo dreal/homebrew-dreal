@@ -21,7 +21,6 @@ class Dreal < Formula
   depends_on 'cmake'            => :build
   depends_on 'wget'             => :build
   depends_on 'homebrew/versions/llvm38' => :build
-  depends_on 'google-perftools' => :optional
 
   needs :cxx11
 
@@ -29,7 +28,8 @@ class Dreal < Formula
     args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
             "-DCMAKE_BUILD_TYPE=Release",
             "-DCMAKE_CXX_COMPILER=/usr/local/bin/clang++-3.8",
-            "-DCMAKE_C_COMPILER=/usr/local/bin/clang-3.8"]
+            "-DCMAKE_C_COMPILER=/usr/local/bin/clang-3.8",
+            "-DTCMALLOC=OFF"]
     mkdir 'build' do
       # Compile tools (Ocaml)
       if ! Dir.exists?(ENV['HOME'] + "/.opam")
