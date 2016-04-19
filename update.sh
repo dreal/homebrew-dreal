@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 #
 # Usage:
 #         BINTRAY_ID=<my_id> BINTRAY_PWD=<my_password> ./update.sh
@@ -56,7 +55,7 @@ if [[ $DOIT == TRUE ]] ; then
     echo "2. Create a bottle"
     echo "===================================="
     brew rm -rf! ${FORMULA_NAME}
-    brew install --use--llvm --build-bottle ./${FORMULA_NAME}.rb
+    brew install --build-bottle ./${FORMULA_NAME}.rb
     # homebrew doesn't allow to generate bottle if it's not in core formula or under a tap.
     # as a temporary solution, we copy the formula file to the /usr/local/Library/Formula
     # and remove it after building a bottle
