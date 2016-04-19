@@ -20,11 +20,16 @@ class Dreal < Formula
   depends_on 'opam'             => :build
   depends_on 'cmake'            => :build
   depends_on 'wget'             => :build
+  depends_on 'llvm'             => :build
   depends_on 'google-perftools' => :optional
 
   needs :cxx11
 
   def install
+    args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
+            "-DCMAKE_BUILD_TYPE=Release",
+            "-DCMAKE_CXX_COMPILER=/usr/local/opt/llvm/bin/clang++", 
+            "-DCMAKE_C_COMPILER=/usr/local/opt/llvm/bin/clang"]
     mkdir 'build' do
       # Compile tools (Ocaml)
       if ! Dir.exists?(ENV['HOME'] + "/.opam")
@@ -36,7 +41,7 @@ class Dreal < Formula
       system "make", "-C", "../tools", "setup.ml", "setup.data"
       system "make", "-C", "../tools"
       # Compile dReal (C++)
-      system "cmake", "../src", "-DCMAKE_CXX_COMPILER=/usr/local/bin/clang++", "-DCMAKE_C_COMPILER=/usr/local/bin/clang", *std_cmake_args
+      system "cmake", "../src", *args
       system "make"
       system "make", "install"
     end
