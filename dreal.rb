@@ -7,8 +7,8 @@ class Dreal < Formula
 
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
-    sha256 '411775891e704083be3c567ad6159e6567a11d00eb7ac1bcf75de34eb091ad0f' => :el_capitan
-    sha256 '7f7f8b6d1623455972fe2823ee48c161483108062b88e1f7f272c5ca6752bc0c' => :yosemite
+    sha256 'db8d783da7fd58f40ece5bf8072f8f7164b0af21b47563922417685bb90586d5' => :el_capitan
+    sha256 '93f23264aa15744bc4a03f2d58008e3bcff8375d61c1f364b11d916778f63fc4' => :yosemite
   end
 
   # Required
@@ -21,7 +21,6 @@ class Dreal < Formula
   depends_on 'cmake'            => :build
   depends_on 'wget'             => :build
   depends_on 'homebrew/versions/llvm38' => :build
-  depends_on 'google-perftools' => :optional
 
   needs :cxx11
 
@@ -29,7 +28,8 @@ class Dreal < Formula
     args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
             "-DCMAKE_BUILD_TYPE=Release",
             "-DCMAKE_CXX_COMPILER=/usr/local/bin/clang++-3.8",
-            "-DCMAKE_C_COMPILER=/usr/local/bin/clang-3.8"]
+            "-DCMAKE_C_COMPILER=/usr/local/bin/clang-3.8",
+            "-DTCMALLOC=OFF"]
     mkdir 'build' do
       # Compile tools (Ocaml)
       if ! Dir.exists?(ENV['HOME'] + "/.opam")
