@@ -12,23 +12,23 @@ class Dreal < Formula
 ##BOTTLE_COMMENT##  end
 
   # Required
-  depends_on 'automake'         => :build
-  depends_on 'autoconf'         => :build
-  depends_on 'libtool'          => :build
-  depends_on 'pkg-config'       => :build
-  depends_on 'objective-caml'   => :build
-  depends_on 'opam'             => :build
-  depends_on 'cmake'            => :build
-  depends_on 'wget'             => :build
-  depends_on 'homebrew/versions/llvm38' => :build
+  depends_on 'automake'                 => :build
+  depends_on 'autoconf'                 => :build
+  depends_on 'libtool'                  => :build
+  depends_on 'pkg-config'               => :build
+  depends_on 'objective-caml'           => :build
+  depends_on 'opam'                     => :build
+  depends_on 'cmake'                    => :build
+  depends_on 'wget'                     => :build
+  depends_on 'homebrew/science/glpk'    => :build
+  depends_on 'homebrew/science/nlopt'   => :build
+  depends_on 'coin-or-tools/coinor/clp' => :build
 
   needs :cxx11
 
   def install
     args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
             "-DCMAKE_BUILD_TYPE=Release",
-            "-DCMAKE_CXX_COMPILER=/usr/local/bin/clang++-3.8",
-            "-DCMAKE_C_COMPILER=/usr/local/bin/clang-3.8",
             "-DTCMALLOC=OFF"]
     mkdir 'build' do
       # Compile tools (Ocaml)
