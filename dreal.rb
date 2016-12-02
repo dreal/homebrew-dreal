@@ -14,9 +14,9 @@ class Dreal < Formula
   depends_on 'opam'                     => :build
   depends_on 'cmake'                    => :build
   depends_on 'wget'                     => :build
-  depends_on 'homebrew/science/glpk'    => :build
-  depends_on 'homebrew/science/nlopt'   => :build
-  depends_on 'dreal/coinor/clp'         => :build
+  depends_on 'homebrew/science/glpk'    
+  depends_on 'homebrew/science/nlopt'   
+  depends_on 'dreal/coinor/clp'         
 
   needs :cxx11
 
