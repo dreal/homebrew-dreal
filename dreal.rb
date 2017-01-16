@@ -16,7 +16,7 @@ class Dreal < Formula
   depends_on 'wget'                     => :build
   depends_on 'homebrew/science/glpk'    
   depends_on 'homebrew/science/nlopt'   
-  depends_on 'dreal/coinor/clp'         
+  depends_on 'coin-or-tools/coinor/clp'         
 
   needs :cxx11
 
