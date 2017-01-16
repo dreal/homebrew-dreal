@@ -4,6 +4,10 @@ class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal3.git"
   version "3.16.12"
+  bottle do
+    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'    
+    sha256 "d83aa55b6edf9c4822ed084cb75e0c343dedd50ac22ffdca29ead9e32d6a5a80" => :sierra
+  end  
 
   # Required
   depends_on 'automake'                 => :build
