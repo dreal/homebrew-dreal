@@ -4,10 +4,10 @@ class Dreal < Formula
   sha256 "e6d744591defa82edc7107544ce12142c9ab74bea5386229ed2ab2afb242c44d"
   version "4.17.09"
 
-  bottle do
-    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
-    sha256 "8d5a58d2edd145a3527ac9192174be1e4395c1dd6268879f1065b3a7f5a9d827" => :sierra
-  end
+#  bottle do
+#    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
+#    sha256 "8d5a58d2edd145a3527ac9192174be1e4395c1dd6268879f1065b3a7f5a9d827" => :sierra
+#  end
 
   # Required
   depends_on 'bazel'                 => :build
@@ -33,8 +33,9 @@ class Dreal < Formula
      Name: dReal
      Description: SMT Solver for Nonlinear Theories
      Version: #{version}
-     Libs: -L${libdir} -ldreal -libex -lClpSolver -lClp -lCoinUtils -lbz2 -lz -lm
-     Cflags: -I${includedir} -I${includedir}/dreal -I${local_includedir}/ibex -I${local_includedir}/ibex/3rd -I${local_includedir}/clp/coin -I${local_includedir}/coinutils/coin
+     Requires: ibex
+     Libs: -L${libdir} -ldreal
+     Cflags: -I${includedir} -I${includedir}/dreal
      EOS
   end
 end
