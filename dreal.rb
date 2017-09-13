@@ -1,56 +1,36 @@
-require "formula"
-
 class Dreal < Formula
   homepage "http://dreal.github.io"
-  url "https://github.com/dreal/dreal3.git"
-  version "3.16.12"
-  bottle do
-    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'    
-    sha256 "d83aa55b6edf9c4822ed084cb75e0c343dedd50ac22ffdca29ead9e32d6a5a80" => :sierra
-  end  
+  url "https://codeload.github.com/dreal/dreal4/tar.gz/5421fa080416f90c1d79c4c47a900031acacacfb"
+  sha256 "e6d744591defa82edc7107544ce12142c9ab74bea5386229ed2ab2afb242c44d"
+  version "4.17.09"
 
   # Required
-  depends_on 'automake'                 => :build
-  depends_on 'autoconf'                 => :build
-  depends_on 'libtool'                  => :build
+  depends_on 'bazel'                 => :build
   depends_on 'pkg-config'               => :build
-  depends_on 'objective-caml'           => :build
-  depends_on 'opam'                     => :build
-  depends_on 'cmake'                    => :build
-  depends_on 'wget'                     => :build
-  depends_on 'homebrew/science/glpk'    
-  depends_on 'homebrew/science/nlopt'   
-  depends_on 'coin-or-tools/coinor/clp'         
+  depends_on 'dreal-deps/ibex/ibex'
 
   needs :cxx11
 
   def install
-    args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
-            "-DCMAKE_BUILD_TYPE=Release",
-            "-DTCMALLOC=OFF"]
-    mkdir 'build' do
-      # Compile tools (Ocaml)
-      if ! Dir.exists?(ENV['HOME'] + "/.opam")
-          system "opam", "init", "--yes"
-      end
-      ENV['PATH'] = ENV['HOME'] + "/.opam/system/bin" + ":" + ENV['PATH']
-      puts "PATH= " + ENV['PATH']
-      system "opam", "install", "--yes", "oasis", "batteries", "ocamlfind"
-      system "make", "-C", "../tools", "setup.ml", "setup.data"
-      system "make", "-C", "../tools"
-      # Compile dReal (C++)
-      system "cmake", "../src", *args
-      system "make"
-      system "make", "install"
-    end
+    system "bazel", "build", "--compilation_mode=opt", "//:package"
+    system "tar", "xf", "bazel-bin/package.tar.gz"
+    bin.install "usr/bin/dreal"
+    lib.install "usr/lib/libdreal.so"
+    include.install "usr/include/dreal"
+    (lib+"pkgconfig/dreal.pc").write pc_file
   end
 
-  test do
-    system "make", "test"
-  end
+  def pc_file; <<-EOS.undent
+     prefix=#{opt_prefix}
+     exec_prefix=${prefix}
+     libdir=${exec_prefix}/lib
+     includedir=${prefix}/include
 
-  def caveats; <<-EOS.undent
-      dReal installed.
-    EOS
+     Name: dReal
+     Description: SMT Solver for Nonlinear Theories
+     Version: #{version}
+     Libs: -L${libdir} -ldreal -libex -lClpSolver -lClp -lCoinUtils -lbz2 -lz -lm
+     Cflags: -I${includedir} -I${includedir}/dreal -I${includedir}/ibex -I${includedir}/ibex/3rd -I${includedir}/clp/coin -I${includedir}/coinutils/coin
+     EOS
   end
 end
