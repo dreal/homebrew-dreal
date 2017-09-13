@@ -21,9 +21,9 @@ class Dreal < Formula
   end
 
   def pc_file; <<-EOS.undent
-     prefix=#{opt_prefix}
+     prefix=#{prefix}
      exec_prefix=${prefix}
-     libdir=${exec_prefix}/lib
+     libdir=${prefix}/lib
      includedir=${prefix}/include
 
      Name: dReal
