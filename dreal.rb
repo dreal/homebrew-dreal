@@ -21,16 +21,15 @@ class Dreal < Formula
   end
 
   def pc_file; <<-EOS.undent
-     prefix=#{prefix}
-     exec_prefix=${prefix}
-     libdir=${prefix}/lib
-     includedir=${prefix}/include
+     libdir=#{prefix}/lib
+     includedir=#{prefix}/include
+     local_includedir=#{HOMEBREW_PREFIX}/include
 
      Name: dReal
      Description: SMT Solver for Nonlinear Theories
      Version: #{version}
      Libs: -L${libdir} -ldreal -libex -lClpSolver -lClp -lCoinUtils -lbz2 -lz -lm
-     Cflags: -I${includedir} -I${includedir}/dreal -I${includedir}/ibex -I${includedir}/ibex/3rd -I${includedir}/clp/coin -I${includedir}/coinutils/coin
+     Cflags: -I${includedir} -I${includedir}/dreal -I${local_includedir}/ibex -I${local_includedir}/ibex/3rd -I${local_includedir}/clp/coin -I${local_includedir}/coinutils/coin
      EOS
   end
 end
