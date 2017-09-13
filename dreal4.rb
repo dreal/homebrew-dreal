@@ -2,7 +2,7 @@ class Dreal4 < Formula
   homepage "http://dreal.github.io"
   url "https://codeload.github.com/dreal/dreal4/tar.gz/5421fa080416f90c1d79c4c47a900031acacacfb"
   sha256 "e6d744591defa82edc7107544ce12142c9ab74bea5386229ed2ab2afb242c44d"
-  version "4.17.09"
+  version "17.09"
 
   # Required
   depends_on 'bazel'                 => :build
