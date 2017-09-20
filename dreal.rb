@@ -1,6 +1,6 @@
 class Dreal < Formula
   homepage "http://dreal.github.io"
-  url "https://codeload.github.com/dreal/dreal4/tar.gz/22cea792816d773abb1e521f2823cbb4e895700a"
+  url "https://github.com/dreal/dreal4/archive/22cea792816d773abb1e521f2823cbb4e895700a.tar.gz"
   sha256 "5eb2900d295a91e67964ae8243ff7163d4a21a84cc6845af3a34ae8905314dc4"
   version "4.17.09.1"
 
