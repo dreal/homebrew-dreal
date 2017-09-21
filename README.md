@@ -11,8 +11,7 @@ How to Install
 --------------
 
 ```bash
-brew tap dreal/dreal
-brew install dreal
+brew dreal/dreal/dreal
 ```
 
 Run ``brew upgrade`` to get the latest version of dReal after installation.
