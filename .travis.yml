@@ -10,6 +10,7 @@ matrix:
       compiler: clang
 
 install:
+  - rm /usr/local/include/c++; fi # https://github.com/Homebrew/brew/issues/1742#issuecomment-277308817
   - brew install dreal/dreal/dreal --build-from-source
 
 script:
