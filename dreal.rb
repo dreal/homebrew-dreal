@@ -4,10 +4,10 @@ class Dreal < Formula
   sha256 "a7e37759d897784cec6eaa997240b8d7cc24eec7c1cee331e713ed75d75262c2"
   version "4.17.09.2"
 
-#  bottle do
-#    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
-#    sha256 "9716cc0e7d756f91c512ac0113a483248ef9540c3a64ec59e5abe0fc4999ce56" => :sierra
-#  end
+  bottle do
+    root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
+    sha256 "d478b89f3a4947c4fde4862bccc8731d29849db420a87495f77f158350f96e42" => :sierra
+  end
 
   # Required
   depends_on 'bazel'                => :build
