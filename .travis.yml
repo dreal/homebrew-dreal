@@ -12,7 +12,7 @@ matrix:
 
 install:
   - rm /usr/local/include/c++ # https://github.com/Homebrew/brew/issues/1742#issuecomment-277308817
-  - brew install dreal/dreal/dreal --build-from-source
+  - brew install dreal/dreal/dreal --build-from-source -v
 
 script:
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
