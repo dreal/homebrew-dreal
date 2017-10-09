@@ -6,7 +6,7 @@ class Dreal < Formula
 
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
-#    sha256 "" => :high_sierra
+    sha256 "f500d417816205d249c98755b84320b211e9ae2ada8df96d6185e65a83bee259" => :high_sierra
 #    sha256 "" => :sierra
   end
 
