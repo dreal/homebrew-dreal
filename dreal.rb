@@ -8,7 +8,7 @@ class Dreal < Formula
     cellar :any
 #     sha256 "7208491aa81276c91708ca7b71d609781592a911b937faf328d09b78d5cbf541" => :el_capitan
 #     sha256 "cc8219c6554962135466be72551e27eb8d9f2cd172bde6139f43ff820e9a178d" => :sierra
-#     sha256 "59cf5ab0079c526c46911746da5ed0652d9aafbfe880f902826b7d83af4655ca" => :high_sierra
+      sha256 "2f47cd3d4c7187778d0791cc3346a8209c8fc7795006d9ad716ec32eb3205476" => :high_sierra
   end
 
   # Required
