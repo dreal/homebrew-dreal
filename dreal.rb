@@ -2,13 +2,14 @@ class Dreal < Formula
   homepage "http://dreal.github.io"
   url "https://github.com/dreal/dreal4/archive/4.18.02.1.tar.gz"
   sha256 "6f8a8d3f6f77612953231203e312b9ada94946042f1e4c65016d8bef954757ae"
+  revision 1
 
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
     cellar :any
-     sha256 "7208491aa81276c91708ca7b71d609781592a911b937faf328d09b78d5cbf541" => :el_capitan
-     sha256 "cc8219c6554962135466be72551e27eb8d9f2cd172bde6139f43ff820e9a178d" => :sierra
-     sha256 "15fb371fa2c3e411bd19f4a6c53d31fb17b8455d774113c382448de07a9953e0" => :high_sierra
+#     sha256 "7208491aa81276c91708ca7b71d609781592a911b937faf328d09b78d5cbf541" => :el_capitan
+#     sha256 "cc8219c6554962135466be72551e27eb8d9f2cd172bde6139f43ff820e9a178d" => :sierra
+      sha256 "59cf5ab0079c526c46911746da5ed0652d9aafbfe880f902826b7d83af4655ca" => :high_sierra
   end
 
   # Required
