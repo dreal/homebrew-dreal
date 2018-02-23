@@ -8,7 +8,7 @@ class Dreal < Formula
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
     cellar :any
       # sha256 "3d7971bdd0f29e2babaa2a09e936878dd44ed277d60b9d42de70f4efa29b771c" => :el_capitan
-      # sha256 "58fba701488bd73814448b1de0948407a16b0c4ea48d45b5c70fd6faae55e5ce" => :sierra
+      sha256 "b9ede02afd86feefc188559ec489133e4bb2898fab1a43b7fe65ed4d4b8bf529" => :sierra
       sha256 "83b6a76ad0b288bdd17eab535e476ff1ddcc54106a159905634c84ea7c66e07a" => :high_sierra
   end
 
