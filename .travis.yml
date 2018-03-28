@@ -1,6 +1,10 @@
 language: cpp
 sudo: required
 
+cache:
+  directories:
+    - $HOME/Library/Caches/Homebrew
+
 matrix:
   include:
     - os: osx
