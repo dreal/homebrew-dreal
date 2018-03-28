@@ -1,8 +1,8 @@
 class Dreal < Formula
   homepage "http://dreal.github.io"
-  url "https://github.com/dreal/dreal4/archive/4.18.03.2.tar.gz"
-  sha256 "532a5392db7e106a5160948b4b97fb3bcdd0779c19369dc557693513830d5427"
   version "4.18.03.2"
+  url "https://github.com/dreal/dreal4/archive/#{version}.tar.gz"
+  sha256 "532a5392db7e106a5160948b4b97fb3bcdd0779c19369dc557693513830d5427"
   
   bottle do
     root_url 'https://dl.bintray.com/dreal/homebrew-dreal'
@@ -19,7 +19,7 @@ class Dreal < Formula
   depends_on 'nlopt'
   depends_on 'dreal-deps/ibex/ibex@2.6.5'
 
-  needs :cxx11
+  needs :cxx14
 
   def install
     system "bazel", "build", "--compilation_mode=opt", "//:archive"
