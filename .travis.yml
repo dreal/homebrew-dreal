@@ -20,6 +20,7 @@ install:
   - brew install dreal/dreal/dreal --build-from-source -v
 
 script:
+  - /usr/local/opt/bin/dreal
   - export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.6.5/share/pkgconfig:${PKG_CONFIG_PATH}
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
