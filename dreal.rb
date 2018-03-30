@@ -27,9 +27,9 @@ class Dreal < Formula
     bin.install "opt/dreal/#{version}/bin/dreal"
     lib.install "opt/dreal/#{version}/lib/libdreal.so"
     include.install "opt/dreal/#{version}/include/dreal"
-    inreplace "opt/dreal/#{version}/lib/pkgconfig/dreal.pc", "HOMEBREW_PREFIX", "#{HOMEBREW_PREFIX}"
-    (lib+"pkgconfig").install "opt/dreal/#{version}/lib/pkgconfig/dreal.pc"
-    (lib+"python2.7").install "opt/dreal/#{version}/lib/python2.7/site-packages"
+    inreplace "opt/dreal/#{version}/lib/pkgconfig/dreal.pc", "HOMEBREW_PREFIX", HOMEBREW_PREFIX.to_s
+    (lib/"pkgconfig").install "opt/dreal/#{version}/lib/pkgconfig/dreal.pc"
+    (lib/"python2.7").install "opt/dreal/#{version}/lib/python2.7/site-packages"
   end
 
   def caveats; <<~EOS
