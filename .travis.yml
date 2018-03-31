@@ -21,6 +21,7 @@ install:
   - rm /usr/local/include/c++ # https://github.com/Homebrew/brew/issues/1742#issuecomment-277308817
   - brew update
   - brew install dreal/dreal/dreal --only-dependencies || true
+  - brew link --overwrite python@2
   - brew install dreal/dreal/dreal --build-from-source -v
 
 script:
