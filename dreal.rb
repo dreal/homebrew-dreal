@@ -11,8 +11,8 @@ class Dreal < Formula
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
     cellar :any
-    # sha256 "a2a8aef14e0f16768331fde0e4969fd80bd8b9a6aa1f1e6f1c80bb606aaf27c4" => :el_capitan
-    # sha256 "7d91cbfbff01c448ea9eaecd041ddc31f596d88796a58294fff2107db5966baa" => :sierra
+    sha256 "27e68d0f3badb325db4f1feec04c2eefea1b4682f70bd459c073edb29bbae762" => :el_capitan
+    sha256 "8ef811ce2a175fbaafaa9de534fd9c897abe0634471e4a97e72ad9d48819949d" => :sierra
     sha256 "2c93fc75d374187b7b917f8cac8031448a02925b95acedd810aeee18df3935fb" => :high_sierra
   end
 
