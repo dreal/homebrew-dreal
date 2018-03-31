@@ -29,7 +29,6 @@ script:
   - export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.6.5/share/pkgconfig:${PKG_CONFIG_PATH}
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
-  - export PYTHONPATH=/usr/local/opt/dreal/lib/python2.7/site-packages:${PYTHONPATH}
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/api/test/api_test.py
   - python2 api_test.py --verbose
 
