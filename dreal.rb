@@ -1,9 +1,12 @@
 class Dreal < Formula
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
-  url "https://github.com/dreal/dreal4/archive/4.18.03.3.tar.gz"
-  sha256 "b1747eab3e498ad33e8703d8e29fb1986a2125cc4b1e4c7f11c8a39a134d7a31"
   head "https://github.com/dreal/dreal4.git"
+
+  stable do
+    url "https://github.com/dreal/dreal4/archive/4.18.03.3.tar.gz"
+    sha256 "b1747eab3e498ad33e8703d8e29fb1986a2125cc4b1e4c7f11c8a39a134d7a31"
+  end
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
