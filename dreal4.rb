@@ -4,8 +4,8 @@ class Dreal4 < Formula
   head "https://github.com/dreal/dreal4.git"
 
   stable do
-    url "https://github.com/dreal/dreal4/archive/4.18.03.2.tar.gz"
-    sha256 "532a5392db7e106a5160948b4b97fb3bcdd0779c19369dc557693513830d5427"
+    url "https://github.com/dreal/dreal4/archive/4.18.03.3.tar.gz"
+    sha256 "b1747eab3e498ad33e8703d8e29fb1986a2125cc4b1e4c7f11c8a39a134d7a31"
   end
 
   bottle do
