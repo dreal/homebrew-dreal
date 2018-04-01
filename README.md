@@ -3,15 +3,16 @@
 homebrew-dreal
 =============
 
-Homebrew tap for [dReal][dreal]
+Homebrew tap for [dReal4][dreal4]
 
-[dreal]: https://dreal.github.io
+[dreal]: https://github.com/dreal/dreal4
 
 How to Install
 --------------
 
 ```bash
-brew dreal/dreal/dreal
+brew tap dreal/dreal
+brew install dreal
 ```
 
-Run ``brew upgrade`` to get the latest version of dReal after installation.
+Run ``brew upgrade dreal`` to get the latest version of dReal after installation.
