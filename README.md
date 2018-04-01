@@ -5,7 +5,7 @@ homebrew-dreal
 
 Homebrew tap for [dReal4][dreal4]
 
-[dreal]: https://github.com/dreal/dreal4
+[dreal4]: https://github.com/dreal/dreal4
 
 How to Install
 --------------
