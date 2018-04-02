@@ -31,6 +31,7 @@ script:
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/api/test/api_test.py
   - python2 api_test.py --verbose
+  - brew test dreal
 
 notifications:
   email:
