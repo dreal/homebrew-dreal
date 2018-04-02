@@ -35,6 +35,18 @@ class Dreal < Formula
   end
 
   test do
-    system "#{bin}/dreal"
+    (testpath/"01.smt2").write <<~EOS
+      (set-logic QF_NRA)
+      (declare-fun x () Real)
+      (declare-fun y () Real)
+      (assert (< 2.4 x))
+      (assert (< x 2.6))
+      (assert (< -10.0 y))
+      (assert (< y 10.0))
+      (assert (= y (cos x)))
+      (check-sat)
+      (exit)
+    EOS
+    system "#{bin}/dreal", "#{testpath}/01.smt2"
   end
 end
