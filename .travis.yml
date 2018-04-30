@@ -20,6 +20,7 @@ matrix:
 install:
   - rm /usr/local/include/c++ # https://github.com/Homebrew/brew/issues/1742#issuecomment-277308817
   - brew update
+  - brew upgrade python
   - brew install dreal/dreal/dreal --only-dependencies || true
   - brew install dreal/dreal/dreal --build-from-source -v
 
