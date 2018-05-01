@@ -4,16 +4,16 @@ class Dreal < Formula
   head "https://github.com/dreal/dreal4.git"
 
   stable do
-    url "https://github.com/dreal/dreal4/archive/4.18.03.3.tar.gz"
-    sha256 "b1747eab3e498ad33e8703d8e29fb1986a2125cc4b1e4c7f11c8a39a134d7a31"
+    url "https://github.com/dreal/dreal4/archive/4.18.04.1.tar.gz"
+    sha256 "69b668a2d9b8a5e0e192318b7716e14e40c96f9b907ff8895b4d09ed10d130a3"
   end
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
     cellar :any
-    sha256 "27e68d0f3badb325db4f1feec04c2eefea1b4682f70bd459c073edb29bbae762" => :el_capitan
-    sha256 "8ef811ce2a175fbaafaa9de534fd9c897abe0634471e4a97e72ad9d48819949d" => :sierra
-    sha256 "2c93fc75d374187b7b917f8cac8031448a02925b95acedd810aeee18df3935fb" => :high_sierra
+    sha256 "d1f580648f0838d48f8eff0f8864fd609d8c6f6d755b84d19177de5b61cdba1d" => :el_capitan
+    sha256 "3e540d0aa3db5c3e194cc5297792d3f5461058801503723e65a6b9560bf0d851" => :sierra
+    sha256 "0d71a2cd62cf63f5a7766543b42cf9035267db10cbf9f4663b7db2e2bbf9d84f" => :high_sierra
   end
 
   # Required
