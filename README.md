@@ -16,3 +16,12 @@ brew install dreal
 ```
 
 Run ``brew upgrade dreal`` to get the latest version of dReal after installation.
+
+How to Maintain
+---------------
+
+```bash
+brew rm dreal -f
+brew install ./dreal.rb --build-bottle
+brew bottle ./dreal.rb --force-core-tap
+```
