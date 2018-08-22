@@ -1,12 +1,8 @@
 class Dreal < Formula
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
-  head "https://github.com/dreal/dreal4.git"
-
-  stable do
-    url "https://github.com/dreal/dreal4/archive/4.18.07.1.tar.gz"
-    sha256 "c04d5b0f2b2378ee7689f5a8401c606dc6c73636a860d48d74f5d27e1b9950c5"
-  end
+  url "https://github.com/dreal/dreal4/archive/4.18.07.1.tar.gz"
+  sha256 "c04d5b0f2b2378ee7689f5a8401c606dc6c73636a860d48d74f5d27e1b9950c5"
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
@@ -20,8 +16,8 @@ class Dreal < Formula
   depends_on "bazelbuild/tap/bazel" => :build
   depends_on "pkg-config"           => :build
   depends_on "python@2"             => :build
-  depends_on "nlopt"
   depends_on "dreal-deps/ibex/ibex@2.6.5"
+  depends_on "nlopt"
 
   needs :cxx14
 
