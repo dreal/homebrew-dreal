@@ -15,12 +15,15 @@ case `uname -r` in
   17.*)
     OSX_NAME="high_sierra"
     ;;
+  18.*)
+    OSX_NAME="mojave"
+    ;;
   *)
     OSX_NAME="unknown"
     ;;
 esac
 
-BOTTLE_FILENAME=dreal-${VERSION}.${OSX_NAME}.bottle.tar.gz
+BOTTLE_FILENAME=dreal--${VERSION}.${OSX_NAME}.bottle.tar.gz
 BINTRAY_URL=https://api.bintray.com/content/dreal/homebrew-dreal/dreal
 
 if [ -e ${BOTTLE_FILENAME} ]
