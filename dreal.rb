@@ -9,7 +9,7 @@ class Dreal < Formula
     cellar :any
     sha256 "decfdbf715d1d811b3f2d42e583a3966a09097da4de89b9a546a3649b434ae81" => :sierra
     sha256 "7cae6919420694302e6a07a8407d5bb75de54815f34aec731d613f425783b47f" => :high_sierra
-    sha256 "a708bcc895394b3ef0834944955c3132d494d71e2b677cd8a7a0f039e53c3928" => :mojave
+    sha256 "152060d2bd162e68e1127281ec269b93dda80c8c50a111a3327d52b669154ace" => :mojave
   end
 
   # Required
