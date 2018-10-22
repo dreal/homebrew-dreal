@@ -3,6 +3,7 @@ class Dreal < Formula
   homepage "https://dreal.github.io"
   url "https://github.com/dreal/dreal4/archive/4.18.07.1.tar.gz"
   sha256 "c04d5b0f2b2378ee7689f5a8401c606dc6c73636a860d48d74f5d27e1b9950c5"
+  head "https://github.com/dreal/dreal4.git"
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
