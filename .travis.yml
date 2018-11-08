@@ -15,7 +15,6 @@ matrix:
       compiler: clang
 
 install:
-  - rm /usr/local/include/c++ # https://github.com/Homebrew/brew/issues/1742#issuecomment-277308817
   - brew update
   - brew upgrade python || true
   - brew install dreal/dreal/dreal --only-dependencies || true
