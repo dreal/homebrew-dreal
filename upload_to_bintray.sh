@@ -23,11 +23,13 @@ case `uname -r` in
     ;;
 esac
 
+PRE_BOTTLE_FILENAME=dreal--${VERSION}.${OSX_NAME}.bottle.tar.gz
 BOTTLE_FILENAME=dreal-${VERSION}.${OSX_NAME}.bottle.tar.gz
 BINTRAY_URL=https://api.bintray.com/content/dreal/homebrew-dreal/dreal
 
-if [ -e ${BOTTLE_FILENAME} ]
+if [ -e ${PRE_BOTTLE_FILENAME} ]
 then
+  mv ${PRE_BOTTLE_FILENAME} ${BOTTLE_FILENAME}
   # Upload Files
   curl -T ${BOTTLE_FILENAME} -u${ID}:${PASSWORD} ${BINTRAY_URL}/${VERSION}/${BOTTLE_FILENAME}
   # Publish version
