@@ -20,8 +20,6 @@ class Dreal < Formula
   depends_on "dreal-deps/ibex/ibex@2.6.5"
   depends_on "nlopt"
 
-  needs :cxx14
-
   def install
     system "bazel", "build", "--compilation_mode=opt", "//:archive"
     # files in archive.tar.gz have `./opt/dreal/<version>` prefix
