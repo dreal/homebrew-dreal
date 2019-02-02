@@ -15,6 +15,7 @@ matrix:
       compiler: clang
 
 install:
+  - brew tap dreal/dreal
   - brew update
   - brew upgrade python || true
   - brew install dreal/dreal/dreal --only-dependencies || true
