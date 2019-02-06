@@ -1,23 +1,23 @@
 class Dreal < Formula
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
-  url "https://github.com/dreal/dreal4/archive/4.18.11.4.tar.gz"
-  sha256 "18022ce9e143c31bb20b0652d58b85a60180258937ec804c3f4336952e0b83e1"
+  url "https://github.com/dreal/dreal4/archive/4.19.02.1.tar.gz"
+  sha256 "f5d6e1f423a3d18459f91c1734652fc0d7c06c07138a451c52ae77b10721e024"
   head "https://github.com/dreal/dreal4.git"
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
     cellar :any
-    sha256 "8d9114db08f565e4e173bcb75621be31a0e2fc798f5b6bf8e678fbc4fa1d0e43" => :sierra
-    sha256 "930d6d2c6015b79195884156d39146ab100e60793ea0b3c9592420d35c84933d" => :high_sierra
-    sha256 "fa07455f818d507798e2016a52576283fcb77de77459a3981e5b294bd2387e26" => :mojave
+    sha256 "79686b497a0adee6e9ded79aa780cddbfd80c5560cbccb8753f51b834a836e27" => :sierra
+    sha256 "f49ea8001343678eb20316c27963ec12feea71022ee0a6b6876f3ced2f1a654d" => :high_sierra
+    sha256 "7a2008d86aa880a593594cbdac21e48c3f9fca6584270c199386a79d701ed7c3" => :mojave
   end
 
   # Required
   depends_on "bazelbuild/tap/bazel" => :build
   depends_on "pkg-config"           => :build
   depends_on "python@2"             => :build
-  depends_on "dreal-deps/ibex/ibex@2.6.5"
+  depends_on "dreal-deps/ibex/ibex@2.7.4"
   depends_on "nlopt"
 
   def install
