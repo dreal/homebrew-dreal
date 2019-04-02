@@ -15,6 +15,8 @@
 
   # Required
   depends_on "bazelbuild/tap/bazel" => :build
+  depends_on "bison"                => :build
+  depends_on "flex"                 => :build
   depends_on "pkg-config"           => :build
   depends_on "python@2"             => :build
   depends_on "dreal-deps/ibex/ibex@2.7.4"
