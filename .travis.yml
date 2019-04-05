@@ -23,6 +23,7 @@ install:
   - brew upgrade python || true
   - brew install dreal/dreal/dreal --only-dependencies || true
   - brew install dreal/dreal/dreal --build-from-source -v
+  - brew install python3
 
 script:
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/smt2/01.smt2
@@ -30,11 +31,14 @@ script:
   - export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.7.4/share/pkgconfig:${PKG_CONFIG_PATH}
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
-  - python2 -m pip install dreal
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/api_test.py
-  - python2 api_test.py --verbose
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/solver_test.py
+  - python2 -m pip install dreal
+  - python2 api_test.py --verbose
   - python2 solver_test.py --verbose
+  - python3 -m pip install dreal
+  - python3 api_test.py --verbose
+  - python3 solver_test.py --verbose
   - brew test dreal
 
 notifications:
