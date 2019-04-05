@@ -1,4 +1,4 @@
- class Dreal < Formula
+class Dreal < Formula
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
   url "https://github.com/dreal/dreal4/archive/4.19.04.1.tar.gz"
