@@ -26,6 +26,7 @@ script:
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/smt2/01.smt2
   - /usr/local/opt/dreal/bin/dreal 01.smt2
   - export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.7.4/share/pkgconfig:${PKG_CONFIG_PATH}
+  - export PKG_CONFIG_PATH=/usr/local/opt/clp@1.17/lib/pkgconfig:${PKG_CONFIG_PATH}
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/api_test.py
