@@ -8,10 +8,13 @@ cache:
 matrix:
   include:
     - os: osx
-      osx_image: xcode9.4
+      osx_image: xcode9.2  # macOS-10.12
       compiler: clang
     - os: osx
-      osx_image: xcode10.2
+      osx_image: xcode9.4  # macOS-10.13
+      compiler: clang
+    - os: osx
+      osx_image: xcode10.2 # macOS-10.14
       compiler: clang
 
 install:
@@ -26,7 +29,6 @@ script:
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/smt2/01.smt2
   - /usr/local/opt/dreal/bin/dreal 01.smt2
   - export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.7.4/share/pkgconfig:${PKG_CONFIG_PATH}
-  - export PKG_CONFIG_PATH=/usr/local/opt/clp@1.17/lib/pkgconfig:${PKG_CONFIG_PATH}
   - curl -o check_sat.cc  https://raw.githubusercontent.com/dreal/dreal-bazel-example-project/master/check_sat.cc
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/api_test.py
@@ -38,6 +40,7 @@ script:
   - python3 api_test.py --verbose
   - python3 solver_test.py --verbose
   - brew test dreal
+  - brew linkage --test dreal
 
 notifications:
   email:
