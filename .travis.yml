@@ -8,9 +8,6 @@ cache:
 matrix:
   include:
     - os: osx
-      osx_image: xcode9.2  # macOS-10.12
-      compiler: clang
-    - os: osx
       osx_image: xcode9.4  # macOS-10.13
       compiler: clang
     - os: osx
@@ -20,7 +17,6 @@ matrix:
 install:
   - brew tap dreal/dreal
   - brew update
-  - brew upgrade python || true
   - brew install dreal/dreal/dreal --only-dependencies || true
   - brew install dreal/dreal/dreal --build-from-source -v
   - brew install python3
@@ -33,9 +29,6 @@ script:
   - clang++ --std=c++14 check_sat.cc `pkg-config dreal --cflags --libs` && ./a.out
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/api_test.py
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/python/solver_test.py
-  - python2 -m pip install dreal
-  - python2 api_test.py --verbose
-  - python2 solver_test.py --verbose
   - python3 -m pip install dreal
   - python3 api_test.py --verbose
   - python3 solver_test.py --verbose
