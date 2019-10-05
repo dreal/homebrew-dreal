@@ -21,7 +21,5 @@ How to Maintain
 ---------------
 
 ```bash
-brew rm dreal -f
-brew install ./dreal.rb --build-bottle
-brew bottle ./dreal.rb --force-core-tap
+./build_and_create_bottle.sh
 ```
