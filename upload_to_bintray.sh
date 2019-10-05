@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euxo pipefail
+
 ID=$1
 PASSWORD=$2
 VERSION=$3
@@ -18,6 +20,9 @@ case `uname -r` in
   18.*)
     OSX_NAME="mojave"
     ;;
+  19.*)
+    OSX_NAME="catalina"
+    ;;
   *)
     OSX_NAME="unknown"
     ;;
@@ -35,7 +40,7 @@ then
   # Publish version
   curl -X POST -u${ID}:${PASSWORD} ${BINTRAY_URL}/${VERSION}/publish
   # Remove the bottle
-  # rm -v ${BOTTLE_FILENAME}
+  rm -v ${BOTTLE_FILENAME}
 else 
   echo "File not found: ${BOTTLE_FILENAME}"
 fi
