@@ -34,6 +34,7 @@ script:
   - python3 solver_test.py --verbose
   - brew test dreal
   - brew linkage --test dreal
+  - brew audit --strict --online dreal
 
 notifications:
   email:
