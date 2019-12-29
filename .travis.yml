@@ -19,7 +19,6 @@ install:
   - brew update
   - brew install dreal/dreal/dreal --only-dependencies || true
   - brew install dreal/dreal/dreal --build-from-source -v
-  - brew install python3
 
 script:
   - wget https://raw.githubusercontent.com/dreal/dreal4/master/dreal/test/smt2/01.smt2
