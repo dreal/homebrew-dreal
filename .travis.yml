@@ -18,6 +18,7 @@ install:
   - brew tap dreal/dreal
   - brew update
   - brew upgrade || true
+  - brew link --overwrite python || true
   - brew install dreal/dreal/dreal --only-dependencies || true
   - brew install dreal/dreal/dreal --build-from-source -v
 
