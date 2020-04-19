@@ -4,16 +4,16 @@ brew update
 brew upgrade || true
 brew link --overwrite python || true
 
-# Audit the formula and check linkage
-brew audit --strict --online dreal
-brew linkage --test dreal
-
 # Install dependencies
 brew install dreal/dreal/dreal --only-dependencies || true
 
 # Build from source and test
 brew install dreal/dreal/dreal --build-from-source -v
 brew test dreal
+
+# Audit the formula and check linkage
+brew audit --strict --online dreal
+brew linkage --test dreal
 
 # Check we can use it as a library
 export PKG_CONFIG_PATH=/usr/local/opt/ibex@2.7.4/share/pkgconfig:${PKG_CONFIG_PATH}
