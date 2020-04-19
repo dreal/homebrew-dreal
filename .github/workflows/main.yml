@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: run_script
-      	run: ./ci/script.sh
+      - name: run script
+        run: ./ci/script.sh
         shell: zsh -efuo pipefail {0}
