@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  macos_catalina:
+    name: macos catalina
+    runs-on: macos-10.15
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: audit_formula
+      	run: brew audit --strict --online dreal/dreal/dreal
+      - name: linkage_test
+        run: brew linkage --test dreal
+      - name: setup
+        run: brew install dreal/dreal/dreal --only-dependencies
+      - name: build_from_source
+        run: brew install dreal/dreal/dreal --build-from-source -v
+      - name: test
+        run: brew test dreal
