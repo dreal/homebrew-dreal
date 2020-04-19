@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dreal/homebrew-dreal.svg?branch=master)](https://travis-ci.org/dreal/homebrew-dreal)
+![CI](https://github.com/dreal/homebrew-dreal/workflows/CI/badge.svg)
 
 homebrew-dreal
 =============
