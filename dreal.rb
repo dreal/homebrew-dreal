@@ -14,7 +14,7 @@ class Dreal < Formula
   end
 
   # Required
-  depends_on "bazelbuild/tap/bazel" => :build
+  depends_on "bazel"                => :build
   depends_on "bison"                => :build
   depends_on "flex"                 => :build
   depends_on "pkg-config"           => :build
