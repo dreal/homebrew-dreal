@@ -5,6 +5,7 @@ brew upgrade || true
 brew link --overwrite python || true
 
 # Install dependencies
+brew tap dreal-deps/ibex
 brew install dreal/dreal/dreal --only-dependencies || true
 
 # Build from source and test
