@@ -20,6 +20,7 @@ class Dreal < Formula
   depends_on "pkg-config"           => :build
   depends_on "python"               => :build
   depends_on "dreal-deps/ibex/ibex@2.7.4"
+  depends_on "gmp"
   depends_on "nlopt"
 
   def install
