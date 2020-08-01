@@ -1,16 +1,16 @@
 class Dreal < Formula
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
-  url "https://github.com/dreal/dreal4/archive/4.20.07.1.tar.gz"
-  sha256 "3189120cae9f750c2cce981ec823f91c83cb5f2ba2d8c71b03cab74f89d31d72"
+  url "https://github.com/dreal/dreal4/archive/4.20.08.1.tar.gz"
+  sha256 "c56db9fd3c81c5e01a123ef91fb290378c633293d87c01c80c0c8cf37e962c74"
   head "https://github.com/dreal/dreal4.git"
 
   bottle do
     root_url "https://dl.bintray.com/dreal/homebrew-dreal"
     cellar :any
-    sha256 "cfd4441757e9e5de00ff85dd4f1c852b1eb6d1a7a7389cdda32de6ad78ed8709" => :high_sierra
-    sha256 "1252d9b523553a081417b8567e1f02009e99e70b9be8c1992f03013a051bf640" => :mojave
-    sha256 "d6d5105bb67b2ba6cfe5ab0e30b5dc2098a2173f141d75aed63aebdd8e1c82dd" => :catalina
+    sha256 "415a904c433ca424ca52c5c253a7970c5c0c30189c94dcf6b732814194edf020" => :high_sierra
+    sha256 "0bef6dd8173970e987472e62b6ef92d3a103a8d96f1336ef8fad0c7b5ddf5dc9" => :mojave
+    sha256 "9d1877c1ba7f195f697b83e587eda0399b8c0f1c157d62d7f68826d4875779ac" => :catalina
   end
 
   # Required
