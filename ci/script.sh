@@ -1,15 +1,15 @@
+# Github CI has bazelisk pre-installed. We remove it to avoid conflicts with bazel.
+brew uninstall bazelisk -f
+
 # Set up dreal/dreal tap
 brew tap dreal/dreal
-brew update
-brew upgrade || true
-brew link --overwrite python || true
 
 # Install dependencies
 brew tap dreal-deps/ibex
-brew install dreal/dreal/dreal --only-dependencies || true
+brew install dreal --only-dependencies || true
 
 # Build from source and test
-brew install dreal/dreal/dreal --build-from-source -v
+brew install dreal --build-from-source -v
 brew test dreal
 
 # Audit the formula and check linkage
