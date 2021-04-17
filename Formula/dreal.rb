@@ -2,14 +2,15 @@
 # frozen_string_literal: true
 
 class Dreal < Formula
+  VERSION = "4.20.12.1"
   desc "SMT Solver for Nonlinear Theories of Reals"
   homepage "https://dreal.github.io"
-  url "https://github.com/dreal/dreal4/archive/4.20.12.1.tar.gz"
+  url "https://github.com/dreal/dreal4/archive/#{VERSION}.tar.gz"
   sha256 "8a8a726a370700e386ee337adf4d15a6cdc882285f29a7b6afb8f4b05c5f13b9"
   head "https://github.com/dreal/dreal4.git"
 
   bottle do
-    root_url "https://dl.bintray.com/dreal/homebrew-dreal"
+    root_url "https://github.com/dreal/dreal4/releases/download/#{VERSION}"
     sha256 cellar: :any, mojave: "65ca699bb79a9823d9235ff0f65787cc7116c56bfa55801581bf6d90a9f4b4b3"
     sha256 cellar: :any, catalina: "de828a57a60a298b921143b5389a0ce34632a8302b703b04a720a726cf7d238f"
     sha256 cellar: :any, big_sur: "45ef8e343efc2c6c98aff1013e3c31b3b5f1e3739faff9bfc2c1859314606f22"
@@ -21,7 +22,7 @@ class Dreal < Formula
   depends_on "flex"                 => :build
   depends_on "pkg-config"           => :build
   depends_on "python"               => :build
-  depends_on "dreal-deps/ibex/ibex@2.7.4"
+  depends_on "robotlocomotion/director/ibex@2.7.4"
   depends_on "gmp"
   depends_on "nlopt"
 
