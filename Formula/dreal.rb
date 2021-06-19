@@ -12,7 +12,7 @@ class Dreal < Formula
   bottle do
     root_url "https://github.com/dreal/dreal4/releases/download/#{VERSION}"
     sha256 cellar: :any, mojave: "6a3c2fb758d24d93fb5db90eb3d0d5c0aa7a3e78845ae157e601a8b63b7d5188"
-    sha256 cellar: :any, catalina: "898227b6fd230665f99e3581a090f4f96fce339df83a141f8f0737eacf695f92"
+    sha256 cellar: :any, catalina: "0cf92754fcdef94d2036940602cc75c6adb5ade2b9d91df35fdb4ae83209557c"
     sha256 cellar: :any, big_sur: "76b3dcf38338d02653c841ce223a7d6ebd910c00984a4f78a0f13147022ad5f6"
   end
 
